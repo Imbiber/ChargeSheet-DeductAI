@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF5 FINAL FORM / REPORT</title>
+    <style>
+        body {
+            text-align:left;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 5em;
+            padding: 0;
+        }
+        
+        .download-btn {
+            background-color: #ffbaba;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #96a5ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdfForm">
+    <form action="#" method="post">
+        <h2 style="text-align: center;">FORM IF5 </h2>
+        <h3 style="text-align: center;">FINAL FORM / REPORT<br>(Under Section 173 CR. P.C.)</h3>
+        
+        <label for="court">IN THE COURT OF</label>
+        <input type="text" id="court" name="court" required> <br> <br>
+
+        <label for="district">1.&nbsp; Dist:</label>
+        <input type="text" id="district" name="district" required>
+
+        <label for="policeStation">P.S:</label>
+        <input type="text" id="policeStation" name="policeStation" required>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+
+        <label for="firNo">FIR No:</label>
+        <input type="text" id="firNo" name="firNo" required>
+
+        <label for="date">&nbsp; 3.&nbsp; Date:</label>
+        <input type="text" id="date" name="date" required><br> <br>
+
+        <label for="reportNo">2.&nbsp; Final Report/Charge-Sheet No:</label>
+        <input type="text" id="reportNo" name="reportNo" required>
+
+        <label for="reportDate">Date:</label>
+        <input type="text" id="reportDate" name="reportDate" required><br><br>
+
+        <label for="act1">4.&nbsp;&nbsp;  (i)&nbsp; Act:</label>
+        <input type="text" id="act1" name="act1" required>
+
+        <label for="section1">Section:</label>
+        <input type="text" id="section1" name="section1" required><br>
+
+        <label for="act2"> &nbsp;&nbsp;&nbsp;  (ii)&nbsp;Act:</label>
+        <input type="text" id="act2" name="act2" required>
+
+        <label for="section2">Section:</label>
+        <input type="text" id="section2" name="section2" required><br>
+
+        <label for="act3">&nbsp;&nbsp;&nbsp;  (iii)&nbsp;Act:</label>
+        <input type="text" id="act3" name="act3" required>
+
+        <label for="section3">Section:</label>
+        <input type="text" id="section3" name="section3" required><br>
+
+        <label for="otherActs">&nbsp;&nbsp;&nbsp;  (iv)&nbsp;Other Acts and Sections:</label>
+        <textarea id="otherActs" name="otherActs"></textarea> <br><br>
+
+        <label for="finalReportType">5.&nbsp;Type of final Report:</label>
+        <input type="text" id="finalReportType" name="finalReportType" required><br><br>
+
+        <label for="unoccurredDetails">6.&nbsp;If F.R. unoccurred:</label>
+        <input type="text" id="unoccurredDetails" name="unoccurredDetails" required><br><br>
+
+        <label for="supplementaryOrOriginal">7.&nbsp;If supplementary or original:</label>
+        <input type="text" id="supplementaryOrOriginal" name="supplementaryOrOriginal" required><br><br>
+
+        <label for="ioName">8.&nbsp;Name of the I.O.:</label>
+        <input type="text" id="ioName" name="ioName" required>
+
+        <label for="ioRank">Rank:</label>
+        <input type="text" id="ioRank" name="ioRank" required><br>
+
+        <label for="complainantName">&emsp;&emsp;Name of Complainant / Informant:</label>
+        <input type="text" id="complainantName" name="complainantName" required><br>
+
+        <label for="fatherOrHusbandName">&emsp;&emsp;Father’s / Husband’s Name:</label>
+        <input type="text" id="fatherOrHusbandName" name="fatherOrHusbandName" required>
+        <br><br><br><br>
+
+        <button class="download-btn" onclick="downloadAsPDF()">Download as PDF</button>
+    </form>
+</div>
+
+    <!-- Include html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function downloadAsPDF() {
+            const formElement = document.getElementById('pdfForm');
+            
+            html2pdf(formElement, {
+                margin: 20,
+                filename: 'form.pdf',
+             
+                // image: { type: 'jpeg', quality: 0.98 },
+                // html2canvas: { scale: 2 },
+                // jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+               
+                
+            });
+        }
+    </script>
+
+</body>
+</html>
